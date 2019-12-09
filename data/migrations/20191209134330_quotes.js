@@ -1,5 +1,5 @@
 exports.up = function(knex) {
-    return knex.schema.createTable('users', quotes => {
+    return knex.schema.createTable('quotes', quotes => {
         quotes.increments();
     
         quotes
