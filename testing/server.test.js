@@ -14,7 +14,9 @@ describe("server", () => {
     });
 
     it("should return provided message", () => {
-      const expected = { message: "Hello! This is the Media API by Pat Steveson." };
+      const expected = {
+        message: "Hello! This is the Media API by Pat Steveson."
+      };
       return request(server)
         .get("/")
         .then(res => {
