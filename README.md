@@ -12,25 +12,39 @@ their favorite memories into savable works of art that they can share with frien
 | POST   | `/auth/register/`      | `username`, `password`,         | Registers a New User to our database.                                   |
 | POST   | `/auth/login/`         | `username`, `password`          | Logs a returning user in.                                               |
 | GET    | `/user/:id/`           | Successful Login                | Used to show a specified user information.                              |
-| POST   | `/user/:id/upload`     | Successful Login, Image File    | Uploads a user image to Cloudinary.                                     |
-| GET    | `/images   `           | Successful Login                | Used to show all uploaded images in the database, by the logged in user.|
+| POST   | `/upload`              | Successful Login, Image File    | Uploads a user image to Cloudinary.                                     |
+| GET    | `/images`              | Successful Login                | Used to show all uploaded images in the database, by the logged in user.|
 | GET    | `/image/:id/`          | Successful Login                | Used to show a specific image in the database.                          |
 
+# User Schema
+user: {
+    username: STRING
+}
 
 # Sample User.
 user: {
     username: 'patrick',
     password: 'pass',
-    email: 'patrick@gmail.com'
+    email: 'patrick@gmail.com',
+    created_at: '12/9/2019'
+}
+
+# Image Schema
+image: {
+
 }
 
 # Sample Image
 image: {
-    name: 'Family Photo',
+    title: 'Family Photo',
     img_url: 'CloudinaryURL',
     date: '1/1/2019',
-    caption: 'Lovely photo of my family' (optional, will potentially be used for a mouse over hover effect on each image)
+    caption: 'Lovely photo of my family', (optional, will potentially be used for a mouse over hover effect on each image)
+    uploaded_by: 'patrick7'
+    uploaded_at: '12/9/2019'
 }
+
+# Quote Schema
 
 # Sample Quote
 Aiming to incorporate quotes in addition to the images for further client side content.
@@ -38,7 +52,8 @@ quote: {
     origin: 'Katelyn',
     content: 'It's not what you say, it's how you say it.',
     date: '1/1/2019'
-    context: 'Talking about me' (optional, not sure how well this column would actually play into the client side visuals)
+    context: 'Talking about me', (optional, not sure how well this column would actually play into the client side visuals)
+    created_at: '12/9/2019'
 }
 
 # User Authorization
@@ -55,3 +70,5 @@ This may cause deployment issues during the switch, but the user friendliness wi
 # Testing
 Incorporating testing to ensure that routes are fully functional, and receiving the proper data from the client.
 
+# Image Uploading
+Images will be uploaded from the User directly to Cloudinary. Building towards using Filepond to make the upload process smooth and user friendly.
