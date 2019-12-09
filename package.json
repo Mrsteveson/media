@@ -1,0 +1,33 @@
+{
+  "name": "media",
+  "version": "1.0.0",
+  "description": "Backend repository for project: Photo Reel",
+  "main": "index.js",
+  "repository": "https://github.com/Mrsteveson/media",
+  "authors": "Patrick Steveson",
+  "scripts": {
+    "server": "nodemon index.js",
+    "test": "cross-env DB_ENV=testing jest --watch",
+    "start": "node index.js"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "dependencies": {
+    "cloudinary": "^1.18.0",
+    "cors": "^2.8.5",
+    "cross-env": "^6.0.3",
+    "datauri": "^2.0.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "helmet": "^3.21.2",
+    "knex": "^0.20.4",
+    "multer": "^1.4.2",
+    "sqlite3": "^4.1.1"
+  },
+  "devDependencies": {
+    "jest": "^24.9.0",
+    "nodemon": "^2.0.1",
+    "supertest": "^4.0.2"
+  }
+}
