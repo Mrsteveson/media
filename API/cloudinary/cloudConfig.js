@@ -1,5 +1,5 @@
 const { config, uploader } = require("cloudinary");
-const dotenv = require('dotenv');
+const dotenv = require("dotenv");
 dotenv.config();
 
 module.exports = {

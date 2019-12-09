@@ -11,7 +11,7 @@ router.post("/register", (req, res) => {
       message: "A valid account requires both a username and password."
     });
   } else {
-    const hash = bcrypt.hashSync(user.password, 12); //hash password
+    const hash = bcrypt.hashSync(user.password, 12);
     user.password = hash;
 
     db.addNew(user)

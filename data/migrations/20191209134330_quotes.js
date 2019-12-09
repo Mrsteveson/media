@@ -19,13 +19,13 @@ exports.up = function(knex) {
         .varchar('uploaded_by')
         .unsigned()
         .notNullable()
-        .references('username')
+        .references('id')
         .inTable('users')
         .onDelete('CASCADE')
         .onUpdate('CASCADE');
 
         quotes
-        .timestamp("created_at", { useTz: false })
+        .timestamp("uploaded_at", { useTz: false })
         .notNullable()
         .defaultTo(knex.fn.now());
     })

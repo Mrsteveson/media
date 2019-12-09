@@ -54,7 +54,7 @@ quote: {
     date: '1/1/2019'
     context: 'Talking about me', (optional, not sure how well this column would actually play into the client side visuals)
     uploaded_by: 'patrick7'
-    created_at: '12/9/2019'
+    uploaded_at: '12/9/2019'
 }
 
 # User Authorization

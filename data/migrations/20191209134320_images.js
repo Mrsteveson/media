@@ -20,7 +20,7 @@ exports.up = function(knex) {
         .varchar('uploaded_by')
         .unsigned()
         .notNullable()
-        .references('username')
+        .references('id')
         .inTable('users')
         .onDelete('CASCADE')
         .onUpdate('CASCADE');
