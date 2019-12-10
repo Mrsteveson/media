@@ -4,10 +4,10 @@ const cors = require("cors");
 
 const server = express();
 
-const userRouter = require("./users/user_router.js")
-const authRouter = require("./auth/auth_router.js")
-const imageRouter = require("./images/image_router.js")
-const quoteRouter = require("./quotes/quote_router.js")
+const userRouter = require("./users/users-router.js")
+const authRouter = require("./auth/auth-router.js")
+const imageRouter = require("./images/images-router.js")
+const quoteRouter = require("./quotes/quotes-router.js")
 
 server.use(helmet());
 server.use(express.json());

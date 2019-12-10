@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const db = require("./user-model.js");
+const db = require("./users-model.js");
 
 router.get("/", (req, res) => {
     db.getUsers()
@@ -35,7 +35,20 @@ router.get("/", (req, res) => {
     } catch (error) {
       console.log(error);
       res.status(500).json({
-        message: "Error getting the images for this user."
+        message: "Error getting this user's quotes."
+      });
+    }
+  });
+  
+  router.get("/:id/quotes", async (req, res) => {
+    console.log(req.params.id);
+    try {
+      const quotes = await db.getUserQuotes(req.params.id);
+      res.status(200).json(quotes);
+    } catch (error) {
+      console.log(error);
+      res.status(500).json({
+        message: "Error getting this user's quotes."
       });
     }
   }); 
@@ -51,6 +64,18 @@ router.get("/", (req, res) => {
         } else {
           res.status(404).json({ message: "The specified user does not exist." });
         }
+      })
+      .catch(err => {
+        res.status(500).json(err.message);
+      });
+  });
+
+  router.delete("/:id", (req, res) => {
+    const id = req.params.id;
+  
+    db.remove(id)
+      .then(user => {
+        res.status(200).json({ message: "User has been successfully deleted." });
       })
       .catch(err => {
         res.status(500).json(err.message);
