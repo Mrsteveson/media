@@ -28,20 +28,20 @@ router.get("/", (req, res) => {
   });
   
   router.get("/:id/images", async (req, res) => {
-    console.log(req.params.id);
+
     try {
       const images = await db.getUserImgs(req.params.id);
       res.status(200).json(images);
     } catch (error) {
       console.log(error);
       res.status(500).json({
-        message: "Error getting this user's quotes."
+        message: "Error getting this user's images."
       });
     }
   });
   
   router.get("/:id/quotes", async (req, res) => {
-    console.log(req.params.id);
+
     try {
       const quotes = await db.getUserQuotes(req.params.id);
       res.status(200).json(quotes);
