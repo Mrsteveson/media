@@ -8,6 +8,7 @@ exports.up = function(knex) {
     
         quotes
         .string('content', 256)
+        .notNullable()
 
         quotes
         .string('date', 128)

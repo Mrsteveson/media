@@ -16,26 +16,43 @@ their favorite memories into savable works of art that they can share with frien
 | GET    | `/images`              | Successful Login                | Used to show all uploaded images in the database, by the logged in user.|
 | GET    | `/image/:id/`          | Successful Login                | Used to show a specific image in the database.                          |
 
-# User Schema
-user: {
-    username: STRING
+# User Model
+```
+{
+    id: INTEGER,
+    username: STRING,
+    password: STRING,
+    email: STRING (optional),
+    created_at: TIMESTAMP
 }
+```
 
 # Sample User.
-user: {
+```
+{
     username: 'patrick',
     password: 'pass',
     email: 'patrick@gmail.com',
     created_at: '12/9/2019'
 }
+```
 
-# Image Schema
-image: {
-
+# Image Model
+```
+{
+    id: INTEGER,
+    title: STRING,
+    img_url: STRING,
+    date: STRING (optional),
+    caption: STRING (optional),
+    uploaded_by: VARCHAR foreign key to USERS,
+    uploaded_at: TIMESTAMP
 }
+```
 
 # Sample Image
-image: {
+```
+{
     title: 'Family Photo',
     img_url: 'CloudinaryURL',
     date: '1/1/2019',
@@ -43,8 +60,20 @@ image: {
     uploaded_by: 'patrick7'
     uploaded_at: '12/9/2019'
 }
+```
 
-# Quote Schema
+# Quote Model
+```
+{
+    id: INTEGER,
+    origin: STRING,
+    content: STRING,
+    date: STRING,
+    context: STRING,
+    uploaded_by: VARCHAR foreign key to USERS,
+    uploaded_at: TIMESTAMP
+}
+```
 
 # Sample Quote
 Aiming to incorporate quotes in addition to the images for further client side content.
