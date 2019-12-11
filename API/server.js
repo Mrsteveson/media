@@ -15,7 +15,8 @@ server.use(cors());
 
 server.use("/users", userRouter);
 server.use("/auth", authRouter);
-server.use("/", imageRouter, quoteRouter)
+server.use("/quotes", quoteRouter)
+server.use("/images", imageRouter)
 
 server.get("/", (req, res) => {
     res.status(200).send({ message: "Hello! This is the Media API by Pat Steveson." });

@@ -15,6 +15,11 @@ router.get("/", (req, res) => {
       });
 });
 
+router.get('/:id', (req,res ) => {
+    res.send(req.params.id)
+})
+
+
 router.post('/upload', multerUploads, (req, res) => {
     if(req.file) {
       const file = dataUri(req).content;
