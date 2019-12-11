@@ -17,7 +17,7 @@ exports.up = function(knex) {
         .string('caption', 128)
 
         images
-        .varchar('uploaded_by')
+        .integer('uploaded_by')
         .unsigned()
         .notNullable()
         .references('id')

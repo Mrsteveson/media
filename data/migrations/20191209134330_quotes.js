@@ -17,7 +17,7 @@ exports.up = function(knex) {
         .string('context', 258)
 
         quotes
-        .varchar('uploaded_by')
+        .integer('uploaded_by')
         .unsigned()
         .notNullable()
         .references('id')

@@ -56,11 +56,12 @@ their favorite memories into savable works of art that they can share with frien
     title: 'Family Photo',
     img_url: 'CloudinaryURL',
     date: '1/1/2019',
-    caption: 'Lovely photo of my family', (optional, will potentially be used for a mouse over hover effect on each image)
+    caption: 'Lovely photo of my family',*** 
     uploaded_by: 'patrick7'
     uploaded_at: '12/9/2019'
 }
 ```
+***Optional, will potentially be used for a mouse over hover effect on each image.
 
 # Quote Model
 ```
@@ -77,14 +78,17 @@ their favorite memories into savable works of art that they can share with frien
 
 # Sample Quote
 Aiming to incorporate quotes in addition to the images for further client side content.
-quote: {
+```
+{
     origin: 'Katelyn',
     content: 'It's not what you say, it's how you say it.',
     date: '1/1/2019'
-    context: 'Talking about me', (optional, not sure how well this column would actually play into the client side visuals)
+    context: 'Talking about me',***
     uploaded_by: 'patrick7'
     uploaded_at: '12/9/2019'
 }
+```
+***(optional, not sure how well this column would actually play into the client side visuals)
 
 # User Authorization
 Initially will be managed through simple login and register endpoints, storing very basic user information.
